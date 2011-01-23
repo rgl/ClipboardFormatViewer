@@ -4,4 +4,4 @@
 @ IF "%1"=="-r" SET DEBUGSAMPLE=/debug- /optimize+
 @ IF "%1"=="-R" SET DEBUGSAMPLE=/debug- /optimize+
 
-csc.exe /nologo /target:winexe %DEBUGSAMPLE% /R:System.DLL /out:bin/main.exe Rgl.Components.ClipboardViewer.cs main.cs
+csc.exe /nologo /target:winexe %DEBUGSAMPLE% /R:System.DLL /out:bin/main.exe /res:i.gif Rgl.Components.ClipboardViewer.cs main.cs

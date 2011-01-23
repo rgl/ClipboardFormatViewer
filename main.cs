@@ -35,6 +35,7 @@
 
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -57,12 +58,17 @@ class MyForm : Form {
 
 		ClientSize = new Size(450, 260);
 
+		Image image;
+
+		using (Stream imageStream = typeof(MyForm).Assembly.GetManifestResourceStream("i.gif")) {
+			image = Image.FromStream(imageStream);
+		}
 
 		PictureBox pictureBox = new PictureBox();
 		pictureBox.Location = new System.Drawing.Point(4, 8);
 		pictureBox.Anchor = AnchorStyles.Left | AnchorStyles.Top;
 		pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-		pictureBox.Image = Image.FromFile("i.gif");
+		pictureBox.Image = image;
 		Controls.Add(pictureBox);
 
 
